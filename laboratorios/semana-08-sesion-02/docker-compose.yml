@@ -1,0 +1,6 @@
+services:
+  python-app:
+    build: ./starter
+    container_name: semana08
+    volumes:
+      - ./data-contenedor:/app/figuras
