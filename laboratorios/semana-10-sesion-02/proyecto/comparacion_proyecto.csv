@@ -1,0 +1,4 @@
+modelo,mae_prueba,mae_10_viajes,segundos,parametros
+gradient boosting,1.275,0.7794,0.113,
+red neuronal,1.1695,0.7251,0.909,1729.0
+LLM (ChatGPT),,0.628,,

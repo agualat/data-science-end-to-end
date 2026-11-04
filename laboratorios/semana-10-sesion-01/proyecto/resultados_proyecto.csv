@@ -1,0 +1,6 @@
+modelo,mae_entrenamiento,mae_prueba,brecha,segundos
+linea base (mediana),13.1998,12.5308,-0.669,0.011
+ridge alpha=1,2.4945,2.5618,0.0674,0.007
+lineal grado 2,1.1195,1.2039,0.0844,0.025
+ridge grado 2 alpha=10,1.284,1.3781,0.0941,0.008
+gradient boosting,1.0705,1.275,0.2044,0.12
