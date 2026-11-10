@@ -9,11 +9,10 @@ corren igual en cualquier maquina, tambien en GitHub Actions.
 
 import numpy as np
 import pandas as pd
-from sklearn.dummy import DummyRegressor
-from sklearn.pipeline import Pipeline
-
 from predecir_lote import predecir_lote
 from preparacion_taxis import CATEGORICAS, NUMERICAS, YA_LISTAS, preparacion
+from sklearn.dummy import DummyRegressor
+from sklearn.pipeline import Pipeline
 
 
 def viajes_de_prueba():
@@ -53,6 +52,8 @@ def test_una_prediccion_por_viaje():
     predicciones = predecir_lote(modelo_de_prueba(), viajes, "abc123")
     # TODO 4: comprueba que hay una fila por viaje, con los mismos id_viaje y
     # en el mismo orden.
+    assert len(predicciones) == len(viajes)
+    assert list(predicciones['id_viaje']) == list(viajes["id_viaje"])
 
 
 def test_viaje_incompleto_tambien_se_estima():
@@ -60,3 +61,5 @@ def test_viaje_incompleto_tambien_se_estima():
     # TODO 5: el viaje 12 llega sin pasajeros. Comprueba que ningun viaje se
     # queda sin tarifa estimada, y que todas las filas llevan la version
     # del modelo que se paso.
+    assert predicciones["tarifa_estimada"].notna().all()
+    assert (predicciones["version_modelo"] == "abc123").all()
