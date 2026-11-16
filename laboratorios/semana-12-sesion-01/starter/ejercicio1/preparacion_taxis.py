@@ -7,6 +7,7 @@ No lo modifiques: si cambia la preparacion, cambia para todos los
 experimentos que la importan, y sus resultados dejan de ser comparables.
 """
 
+import joblib
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split

@@ -11,10 +11,9 @@ No lo modifiques.
 
 import joblib
 import pandas as pd
+from preparacion_taxis import CATEGORICAS, NUMERICAS, OBJETIVO, YA_LISTAS, preparacion
 from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import Pipeline
-
-from preparacion_taxis import CATEGORICAS, NUMERICAS, OBJETIVO, YA_LISTAS, preparacion
 
 RUTA_MODELO = "modelo_tarifa.joblib"
 
